@@ -18,8 +18,9 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     )} />
 );
 
+console.log(process.env.PUBLIC_URL);
 ReactDOM.render(
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
         <Switch>
             <Route exact path="/login" component={LoginController}/>
             <App>

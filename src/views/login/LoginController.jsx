@@ -30,7 +30,7 @@ export class LoginController extends Component {
             Auth.setAccessToken(accessToken);
     
             // TODO this should be using the proper browser history API
-            window.location.pathname = "";
+            window.location.pathname = window.location.pathname.replace("/login", "");
         }
     };
 

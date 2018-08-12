@@ -12,12 +12,12 @@ class App extends Component {
             console.error("Error trying to check authentication", error);
 
             // TODO replace with the proper browse history API
-            window.location.pathname = "/login";
+            window.location.href = `${window.location.origin}/login`;
         });
         
         if (!isAuthenticated) {
             // TODO replace with the proper browse history API
-            window.location.pathname = "/login";
+            window.location.href = `${window.location.origin}/login`;
         }
     }
 
