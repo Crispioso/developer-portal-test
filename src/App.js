@@ -6,11 +6,18 @@ import './App.css';
 import Auth from './utility/auth';
 
 class App extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            isAuthenticating: false
+        }
+    }
 
     async componentWillMount() {
+        this.setState({isAuthenticating: true});
         const isAuthenticated = await Auth.isAuthenticated().catch(error => {
             console.error("Error trying to check authentication", error);
-
             // TODO replace with the proper browse history API
             window.location.href = `${window.location.origin}${process.env.PUBLIC_URL}/login`;
         });
@@ -18,10 +25,17 @@ class App extends Component {
         if (!isAuthenticated) {
             // TODO replace with the proper browse history API
             window.location.href = `${window.location.origin}${process.env.PUBLIC_URL}/login`;
+            return;
         }
+
+        this.setState({isAuthenticating: false});
     }
 
     render() {
+        if (this.state.isAuthenticating) {
+            return "";
+        }
+
         return (
             <div>
                 <AppBar position="static">

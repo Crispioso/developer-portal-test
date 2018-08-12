@@ -11,7 +11,7 @@ export default class Auth  {
                 return;
             }
 
-            await http.get("/", accessToken).catch(error => {
+            await http.get(API.getURL(), accessToken).catch(error => {
                 if (error.status === 401) {
                     resolve(false);
                     return;
