@@ -25,7 +25,7 @@ function request(method, uri, body, accessToken, callerHandles401 = false) {
             // http.js because we always want to take the same action (i.e redirect to /login).
             if (response.status === 401 && !callerHandles401) {
                 // TODO replace with the proper browse history API
-                window.location.href = `${window.location.origin}/login`;
+                window.location.href = `${window.location.origin}${process.env.PUBLIC_URL}/login`;
                 reject(response);
                 return;
             }
