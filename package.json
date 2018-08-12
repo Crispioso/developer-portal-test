@@ -25,5 +25,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "http://crispioso.github.io/developer-portal"
+  "homepage": "http://crispioso.github.io/developer-portal-test"
 }
