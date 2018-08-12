@@ -1,0 +1,19 @@
+main {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.card-list__item {
+    padding: 0;
+    margin: 0 0 1rem 0;
+    width: 25rem;
+}
+.card-list__link {
+    text-decoration: none;
+    color: initial;
+}
