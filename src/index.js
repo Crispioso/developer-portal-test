@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import 'typeface-roboto';
 import './index.css';
@@ -13,9 +13,9 @@ ReactDOM.render(
     <Router basename={process.env.PUBLIC_URL}>
         <Switch>
             <Route exact path="/login" component={LoginController}/>
-            <App exact path="/">
+            <App>
                 <Switch>
-                    <Route exact component={ApplicationsController} />
+                    <Route exact path="/" component={ApplicationsController} />
                     <Route path="/:applicationID" component={UsersController}/>
                 </Switch>
             </App>
